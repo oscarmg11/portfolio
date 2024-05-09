@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [vue(), tsconfigPaths()],
   resolve: {
     alias: {
+      // @ts-ignore
       'src': path.resolve(__dirname, './src'),
     },
   }
