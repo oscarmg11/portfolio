@@ -18,7 +18,7 @@
         const scene = new THREE.Scene();
         sceneStore.setScene(markRaw(scene))
 
-        const light = new THREE.DirectionalLight( 0xffffff, 0.2);
+        const light = new THREE.DirectionalLight( 0xffffff, 0.3);
         light.position.set( 0, 0, 5);
         light.castShadow = true;
 
