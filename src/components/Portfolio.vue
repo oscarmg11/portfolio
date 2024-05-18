@@ -11,11 +11,14 @@ import Text from 'src/components/Text.vue';
             </div>
         </section>
         <section class="portfolio">
-            <Text text="Hello! I'm Oscar Moreno, i'm a frontend developer passionated by videogames, movies and languages." class-name="description" />
-            <Text text="I consider myself a person with analytic abilities, intuitive and capable of acquire knowledge in a efficient and autodidact way." class-name="description" />
+            <Text text="Hello! I'm Oscar Moreno, i'm a frontend developer passionated by videogames, movies and programming." class-name="description" />
+            <Text text="I consider myself a person with analytic abilities, intuitive and capable of acquire knowledge in a efficient and autodidact way. My passion about technologies and digital entertainment pushes me to improve constantly and to look for new ways to apply my skills in innovative projects." class-name="description" />
             <div class="linksContainer">
                 <a href="https://www.linkedin.com/in/%C3%B3scar-moreno-534b3a1b8/" target="_blank">
                     <img src="/linkedin.png" :alt="$t('linkedin icon')"  class="icon" />
+                </a>
+                <a href="https://github.com/oscarmg11" target="_blank">
+                    <img src="/github.png" :alt="$t('github icon')"  class="icon" />
                 </a>
             </div>
         </section>
@@ -82,6 +85,17 @@ import Text from 'src/components/Text.vue';
 .icon {
     width: 22px;
     height: 22px;
+}
+
+@media (max-width: 600px) {
+    .main {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .description {
+        max-width: 80vw;
+    }
 }
 
 </style>
