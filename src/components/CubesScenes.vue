@@ -1,6 +1,6 @@
 <script setup>
     import * as THREE from 'three';
-    import { onMounted, markRaw } from 'vue'
+    import { onMounted, markRaw, onUnmounted } from 'vue'
     import { sceneStore } from 'src/store/sceneStore';
     import { renderStore } from 'src/store/renderStore';
     import { animate } from 'src/services/animate';
@@ -8,17 +8,21 @@
     import { createCubeMatrix } from 'src/services/createCubeMatrix';
     import { addCamera } from 'src/services/camera/addCamera';
     import { addSpotLight } from 'src/services/light/addSpotLight';
-    import { cameraStore } from "../store/cameraStore.ts";
     import { useCameraTargetPosition } from 'src/services/mouse/useCameraTargetPosition';
+    import { cameraStore } from 'src/store/cameraStore';
 
     useCameraLookAtPosition()
     useCameraTargetPosition()
 
     onMounted(() => {
+        window.addEventListener('resize', handleResizeWindow)
+    })
+
+    onMounted(() => {
         const scene = new THREE.Scene();
         sceneStore.setScene(markRaw(scene))
 
-        const light = new THREE.DirectionalLight( 0xffffff, 0.3);
+        const light = new THREE.DirectionalLight( 0xffffff, 0.5);
         light.position.set( 0, 0, 5);
         light.castShadow = true;
 
@@ -37,6 +41,18 @@
 
         animate()
     })
+
+    onUnmounted(() => {
+        document.removeEventListener('resize', handleResizeWindow)
+    })
+
+    const handleResizeWindow = () => {
+        if(cameraStore.camera){
+            cameraStore.camera.aspect = window.innerWidth / window.innerHeight;
+            cameraStore.camera.updateProjectionMatrix();
+        }
+        renderStore.renderer?.setSize( window.innerWidth, window.innerHeight);
+    }
 
 </script>
 
