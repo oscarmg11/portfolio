@@ -2,7 +2,7 @@ import * as TWEEN from '@tweenjs/tween.js'
 import { sceneStore } from "../store/sceneStore.ts";
 import { cameraStore } from "../store/cameraStore.ts";
 import { renderStore } from "../store/renderStore.ts";
-import { animateCubes } from "src/services/animation/animateCubes.ts";
+import { rotateCubes } from "src/services/animation/rotateCubes.ts";
 
 
 export function animate(){
@@ -12,7 +12,7 @@ export function animate(){
         return
     }
 
-    animateCubes()
+    rotateCubes()
     TWEEN.update();
 
     requestAnimationFrame( animate );

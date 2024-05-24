@@ -13,7 +13,7 @@ export function createCube(x: number, y: number, z: number): Mesh | undefined {
     const geometry = new THREE.BoxGeometry( 1, 1, 1 );
     const material = new THREE.MeshPhongMaterial( { color: 0x182adb } );
     const cube = new THREE.Mesh( geometry, material );
-    cube.name = `${x}|${y}|${z}`
+    cube.name = `cube${cubeList.length}`
     cube.position.x = x
     cube.position.y = y
     cube.position.z = z
