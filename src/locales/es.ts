@@ -5,4 +5,8 @@ export const es  = {
     'Selfie of my self': 'Selfie de mi mismo',
     'linkedin icon': 'Icono de linkedin',
     'github icon': 'Icono de github',
+    'PLAY': 'JUGAR',
+    'Your mission is simple: use the keyboard arrows to avoid obstacles that comes to you. Challange your reflexes and try to not crash!': 'Tu misión es simple: usa las flechas del teclado para esquivar obstáculos que vienen hacia ti. ¡Desafía a tus reflejos y trata de no estrellarte!',
+    'Press any keyboard to start': 'Presiona cualquier tecla para empezar',
+    'Press ESC to exit': 'Presiona ESC para salir'
 }
